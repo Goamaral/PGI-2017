@@ -5,7 +5,8 @@ var kraken = require('kraken-js');
 var path = require('path');
 var enrouten = require('express-enrouten');
 var mongoose = require('mongoose');
-var mongoUrl = "mongodb://localhost:27017/mydb";
+var config = require('./config.json');
+var mongoUrl = "mongodb://" + config.username + ":" + config.password + "@ds141766.mlab.com:41766/uteach";
 
 var options, app, db;
 
