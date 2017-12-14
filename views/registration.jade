@@ -1,13 +1,11 @@
 extends layout
 
 block content
-  #header.navbar
-    .nav-brand
-      a.navbar-item(href='/')
-        h1 Home
-  #core.section
-    .columns
-      #col1.column(style={'padding':'0 3rem 0 3rem'})
+  section#core(style={'padding':'1rem 3rem', 'margin-bottom': '2rem'})
+    section.hero(style={'margin-bottom':'2rem'})
+      h1.title Registo
+    div.columns
+      div.column
         form(action='/registration', method='POST')
           .field
             label.label Nome
@@ -48,7 +46,7 @@ block content
             .control.column
               input(type='submit', value='Registar')#submit.button.is-link.is-fullwidth.is-pulled-right
           
-      #col2.column
+      div.column
         h1 left
-  #footer.footer
+  section#footer.footer
     h1 footer

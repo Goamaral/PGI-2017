@@ -4,5 +4,10 @@ html
     title Uteach
     link(rel='stylesheet', href='/bulma/css/bulma.css')
     meta(name="viewport", content="width=device-width, initial-scale=1")
-  body
+  body(style={'padding-top': '4rem'})
+    section#header.navbar.is-fixed-top(style={'height':'4rem', 'box-shadow': '0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1)'})
+      div.nav-brand(style={'margin': '0rem 2rem'})
+        a.navbar-item(href='/', style={'justify-content': 'center', 'flex-direction': 'column', 'display': 'flex', 'height': '4rem'})
+          div
+            img(src='/images/flat_logo.png')
     block content

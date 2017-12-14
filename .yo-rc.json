@@ -1,0 +1,14 @@
+{
+  "generator-kraken": {
+    "taskModule": "grunt",
+    "lintModule": "eslint",
+    "description": "Tutoring WebApp",
+    "author": "Uteach",
+    "templateModule": false,
+    "i18n": false,
+    "componentPackager": "bower",
+    "cssModule": false,
+    "jsModule": "browserify",
+    "useJson": null
+  }
+}
