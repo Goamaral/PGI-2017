@@ -1,11 +1,15 @@
 extends layout
 
 block content
-  section#core(style={'padding':'1rem 3rem', 'margin-bottom': '2rem'})
-    section.hero(style={'margin-bottom':'2rem'})
-      h1.title Registo
-    div.columns
-      div.column
+  #header.navbar
+    .nav-brand
+      a.navbar-item(href='/')
+        h1 Home
+  #core.section
+    .columns
+      #col1.column(style={'padding':'0 3rem 0 3rem'})
+        .title
+          h1 REGISTAR
         form(action='/registration', method='POST')
           .field
             label.label Nome
@@ -35,7 +39,7 @@ block content
           .field
             label.label Confirmar password
             .control
-              input.input(type='password', placeholder='Password', name='confirm-password', required)
+              input.input(type='password', placeholder='Confirmar Password', name='confirm-password', required)
           label.label Tipo
           .field.is-grouped.columns
             .control.column
@@ -46,7 +50,23 @@ block content
             .control.column
               input(type='submit', value='Registar')#submit.button.is-link.is-fullwidth.is-pulled-right
           
-      div.column
-        h1 left
-  section#footer.footer
+      #col2.column
+        //TODO: add action
+        .title
+          h1 REGISTAR
+        form(action="" method='POST')
+          .field
+            label.label Email
+            .control
+              input.input(type='text', placeholder='Email', name='email', required)
+          .field
+            label.label Password
+            .control
+              input.input(type='password', placeholder='Password', name='password', required)
+          .control
+            input(type='submit', value='Login')#submit.button.is-link.is-medium
+        
+            
+              
+  #footer.footer
     h1 footer
