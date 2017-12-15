@@ -1,9 +1,8 @@
 {
     "rules": {
-        "indent": [
-            2,
-            4
-        ],
+        "no-console": 0,
+        "no-undef": 0,
+        "no-unused-vars": 0,
         "quotes": [
             2,
             "single"
@@ -15,13 +14,15 @@
         "semi": [
             2,
             "always"
-        ],
-        "no-console": 1
+        ]
     },
     "env": {
-        "node": true,
-        "browser": true,
-        "mocha": true
+        "es6": true,
+        "node": true
+    },
+    "ecmaFeatures": {
+        "modules": true,
+        "experimentalObjectRestSpread": true
     },
     "extends": "eslint:recommended"
 }

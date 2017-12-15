@@ -1,6 +1,7 @@
 'use strict';
 
-var Schema = require('mongoose').Schema;
+var mongoose = require('mongoose');
+var { Schema } = mongoose;
 
 var TutorSchema = new Schema({
   rating: Number,
