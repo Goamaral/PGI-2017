@@ -2,7 +2,8 @@
 
 module.exports = function (router) {
     router.get('/', function (req, res) {
-        res.render('registration');
+        res.render('home');
     });
 
+    router.post
 };

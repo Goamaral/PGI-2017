@@ -1,13 +1,9 @@
 extends layout
 
 block content
-  #header.navbar
-    .nav-brand
-      a.navbar-item(href='/')
-        h1 Home
   #core.section
     .columns
-      #col1.column(style={'padding':'0 3rem 0 3rem'})
+      #col1.column(style={'padding':'0 3rem 0 1.5rem'})
         .title
           h1 REGISTAR
         form(action='/registration', method='POST')
@@ -53,8 +49,8 @@ block content
       #col2.column
         //TODO: add action
         .title
-          h1 REGISTAR
-        form(action="" method='POST')
+          h1 LOGIN
+        form(action="/login" method='POST')
           .field
             label.label Email
             .control
@@ -64,7 +60,7 @@ block content
             .control
               input.input(type='password', placeholder='Password', name='password', required)
           .control
-            input(type='submit', value='Login')#submit.button.is-link.is-medium
+            input(type='submit', value='Login')#submit.button.is-link(style={'width': '30%'})
         
             
               
