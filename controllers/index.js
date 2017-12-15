@@ -3,7 +3,6 @@
 var bcrypt = require('bcrypt');
 //var session = require('express-session');
 var User = require('../models/User');
-var saltRounds = parseInt(require('../config.json').saltRounds);
 
 module.exports = function (router) {
   router.get('/', function (req, res) {
@@ -11,23 +10,32 @@ module.exports = function (router) {
     res.render('home');
   });
 
-  router.post('/login', function (req) {
-    console.log(req.body);
+  router.post('/login', function (req, res) {
+     User.find({ email: req.body.email }, function (err, user) {
+      if (err != undefined) {
+        res.send({ sts: false, msg: err });
+      } else {
+        res.send({ sts: req.body.password == user[0].password });
+        /*
+        if (bcrypt.compareSync(req.body.password, user[0].password)) {
+          res.send({ sts: true });
+        } else {
+          res.send({ sts: false, msg: user[0].password + ' vs ' + hash });
+        }
+        */
+      }
+    });
+
+
   });
 
   router.post('/register', function (req, res) {
-    bcrypt.hash(req.body.password, saltRounds, function(err, hash) {
+    //let hash = bcrypt.hashSync(req.body.password);
+    //req.body.password = hash;
+    User.create(req.body, function (err) {
       if (err != undefined) {
-        console.log('error');
-        throw err.message;
-      } else {
-        req.body.password = hash;
-        User.create(req.body, function (err) {
-          if(err) {
-            res.send(false);
-          } else res.send(true);
-        });
-      }
+        res.send({ sts: false, msg: err });
+      } else res.send({ sts: true });
     });
   });
 };
