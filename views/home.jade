@@ -6,7 +6,8 @@ block content
       #col1.column(style={'padding':'0 3rem 0 1.5rem'})
         .title
           h1 REGISTAR
-        form(action='/registration', method='POST')
+        form(action='/register', method='POST')
+          input(type='hidden', name='_csrf', value='#{csrf}')
           .field
             label.label Nome
             .control
@@ -32,15 +33,11 @@ block content
             label.label Password
             .control
               input.input(type='password', placeholder='Password', name='password', required)
-          .field
-            label.label Confirmar password
-            .control
-              input.input(type='password', placeholder='Confirmar Password', name='confirm-password', required)
           label.label Tipo
           .field.is-grouped.columns
             .control.column
               .select.is-fullwidth
-                select(name='tipo')
+                select(name='type')
                   option Estudante
                   option Tutor
             .control.column
@@ -51,6 +48,7 @@ block content
         .title
           h1 LOGIN
         form(action="/login" method='POST')
+          input(type='hidden', name='_csrf', value='#{csrf}')
           .field
             label.label Email
             .control
@@ -60,7 +58,7 @@ block content
             .control
               input.input(type='password', placeholder='Password', name='password', required)
           .control
-            input(type='submit', value='Login')#submit.button.is-link(style={'width': '30%'})
+            input(type='submit', value='Login', style={'width': '30%'})#submit.button.is-link
         
             
               

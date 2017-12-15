@@ -1,6 +1,7 @@
 'use strict';
 
-var Schema = require('mongoose').Schema;
+var mongoose = require('mongoose');
+var { Schema } = mongoose;
 
 var UserSchema = new Schema({
   name: {
@@ -21,7 +22,8 @@ var UserSchema = new Schema({
   email: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
+    unique: true
   },
   password: {
     type: String,
