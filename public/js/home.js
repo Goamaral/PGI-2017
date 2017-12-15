@@ -21,7 +21,6 @@ window.onload = function() {
   };
 
   // Login
-  // Register
   document.getElementById('login').onclick = function (ev) {
     var params = new FormData(document.getElementById('loginForm'));
     axios.post('/login', params)
