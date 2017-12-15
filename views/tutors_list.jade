@@ -1,56 +1,57 @@
 extends layout
 
+block topic
+  p.is-size-6 Fisica
+
+block topics
+  .tile.is-ancestor.is-vertical.section
+    .tile
+      .tile.is-parent
+        tile.is-child.is-2
+          block topic
+      .tile.is-parent
+          p.tile.is-child.is-2
+            block topic
+    .tile
+      .tile.is-parent
+        tile.is-child.is-2
+          block topic
+      .tile.is-parent
+          p.tile.is-child.is-2
+            block topic
+    
+
 block tutor_card
   .card.notification.is-info
     .card-content
-      .columns
-        #col1.column(style={'padding':'0 3rem 0 3rem'})
-          .media
-            .media-content
-              .title.is-4
-                p John Smith
-              .subtitle.is-6
-                p johnSmith@gmail.com
-        #col2.column(style={'padding':'0 3rem 0 3rem'})
-          .tile.is-ancestor
-            .tile.is-parent
-              p.tile.is-child Programaçao 
-            .tile.is-parent
-                p.tile.is-child Matematica
-            .tile.is-parent
-                p.tile.is-child Fisica
-            .tile.is-parent
-                p.tile.is-child Fisica
+      .media
+        .media-content
+          .title.has-text-centered
+            p John Smith
+          .subtitle.has-text-centered
+            p johnSmith@gmail.com
+      block topics
 
 block content
-
-  block tutor_card
-  block tutor_card
-  block tutor_card
-  block tutor_card
-  block tutor_card
-//
-<!--
-.tile.is-ancestor.is-vertical.section
-  //AS many tiles as (int)n_tutors/3
-  .tile
-    //PUSH TILES THERE
-    .tile.is-parent.is-4
-      tile.is-child
-        block tutor_card
-    .tile.is-parent.is-4
-      tile.is-child
-        block tutor_card
-    .tile.is-parent.is-4
-      tile.is-child
-        block tutor_card
-  .tile
-    .tile.is-parent.is-4
-      tile.is-child
-        block tutor_card
-    .tile.is-parent.is-4
-      tile.is-child
-        block tutor_card
--->
+  .tile.is-ancestor.is-vertical.section
+    //AS many tiles as (int)n_tutors/3
+    .tile
+      //PUSH TILES THERE
+      .tile.is-parent.is-3
+        tile.is-child
+          block tutor_card
+      .tile.is-parent.is-3
+        tile.is-child
+          block tutor_card
+      .tile.is-parent.is-3
+        tile.is-child
+          block tutor_card
+      .tile.is-parent.is-3
+        tile.is-child
+          block tutor_card
+    .tile
+      .tile.is-parent.is-3
+        tile.is-child
+          block tutor_card
   
   
