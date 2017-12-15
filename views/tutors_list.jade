@@ -1,0 +1,56 @@
+extends layout
+
+block tutor_card
+  .card.notification.is-info
+    .card-content
+      .columns
+        #col1.column(style={'padding':'0 3rem 0 3rem'})
+          .media
+            .media-content
+              .title.is-4
+                p John Smith
+              .subtitle.is-6
+                p johnSmith@gmail.com
+        #col2.column(style={'padding':'0 3rem 0 3rem'})
+          .tile.is-ancestor
+            .tile.is-parent
+              p.tile.is-child Programaçao 
+            .tile.is-parent
+                p.tile.is-child Matematica
+            .tile.is-parent
+                p.tile.is-child Fisica
+            .tile.is-parent
+                p.tile.is-child Fisica
+
+block content
+
+  block tutor_card
+  block tutor_card
+  block tutor_card
+  block tutor_card
+  block tutor_card
+//
+<!--
+.tile.is-ancestor.is-vertical.section
+  //AS many tiles as (int)n_tutors/3
+  .tile
+    //PUSH TILES THERE
+    .tile.is-parent.is-4
+      tile.is-child
+        block tutor_card
+    .tile.is-parent.is-4
+      tile.is-child
+        block tutor_card
+    .tile.is-parent.is-4
+      tile.is-child
+        block tutor_card
+  .tile
+    .tile.is-parent.is-4
+      tile.is-child
+        block tutor_card
+    .tile.is-parent.is-4
+      tile.is-child
+        block tutor_card
+-->
+  
+  
