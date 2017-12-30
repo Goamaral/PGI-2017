@@ -7,7 +7,7 @@ var User = require('../models/User');
 module.exports = function (router) {
   router.get('/', function (req, res) {
     res.locals.csrf = req.csrfToken();
-    res.render('home');
+    res.render('index');
   });
 
   router.post('/login', function (req, res) {
@@ -16,7 +16,7 @@ module.exports = function (router) {
         res.send({ sts: false, msg: err });
       } else {
         let hash = sha256(req.body.password);
-        res.send({ sts: hash == user[0].password });
+        res.redirect('/tutors-list');
       }
     });
   });
@@ -31,11 +31,18 @@ module.exports = function (router) {
       } else {
         if (req.body.type == 'Tutor') {
           res.send({ sts: false, msg: err });
-          //res.redirect('/tutor_register');
         } else {
-          res.send({ sts: true });
+          res.redirect('/tutors-list');
         }
       }
     });
+  });
+
+  router.get('/tutors-list', function (req, res) {
+    res.render('tutors-list');
+  });
+
+  router.get('/profile', function (req, res) {
+    res.render('profile');
   });
 };

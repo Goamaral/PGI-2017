@@ -3,8 +3,8 @@ const kraken = require('kraken-js');
 const path = require('path');
 const enrouten = require('express-enrouten');
 const mongoose = require('mongoose');
-const config = require('./config.json');
 const session = require('express-session');
+//const config = require('./config.json');
 //const mongoUrl = 'mongodb://' + config.username + ':' + config.password + '@ds141766.mlab.com:41766/uteach';
 const mongoUrl = 'mongodb://localhost/uteach';
 

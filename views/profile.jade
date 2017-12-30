@@ -1,0 +1,46 @@
+doctype html
+head
+  title Uteach
+  link(rel='stylesheet', href='/css/reset.css')
+  link(rel='stylesheet', href='/css/core.css')
+  link(rel='stylesheet', h/css/tref='https://fonts.googleapis.com/css?family=Roboto+Slab:400')
+  link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans:400')
+  script(defer='true', src='https://use.fontawesome.com/releases/v5.0.2/js/all.js')
+  meta(name="viewport", content="width=device-width, initial-scale=1")
+body
+  .header.fixed-top.fullwidth.vcenter.shadow.spaceBetween
+    .w5
+      a.ml2.f1(href='tutors-list') Tutores
+      
+    img(src='/images/logo.png', width='154rem')
+    
+    .w5
+      a.mr2.f1 Logout
+    
+  .fullwidth.hcenter
+    .card.shadow.mt0-5.w37.h30
+      .mt2.flex.spaceBetween
+        h2.cb.ml4 Perfil
+        input.mr2.w8-5.bc1.fr(value='Guardar', type='submit')
+        
+      .mt2.inlineFlex
+        img(src='/images/user.png').ml2.mr2.w8.h8
+        .column
+          input.w23.input(placeholder='Artur Filipe Machado', type='text' name='name', required='true')
+          input.w23.input(placeholder='exemplo_email@uteach.com', type='email' name='email', required='true')
+          input.w23.input(placeholder='9826301549', type='tel' name='phone', required='true')
+          input.w23.input(placeholder='Engenharia Informatica', type='text' name='course', required='true')
+          .inlineFlex
+            input.w18.input(placeholder='Mestrado', type='text' name='rank', required='true')
+            input.w5.input(placeholder='2', type='number' name='year', required='true', min='0')
+          input.w23.input(placeholder='************************', type='Password' name='password', required='true')
+      
+      .horizontalDivider.mt2.mr2.ml2(data-content="Area de Tutor")
+      
+      .hcenter.mt2
+          h2.cb Queres te tornar um tutor?
+          
+      .hcenter.mt1
+        .column  
+          input.w13.bc1.fr(value='Tornar-me tutor', type='submit')
+      

@@ -1,0 +1,184 @@
+html, body {
+  background-color: #cccccc;
+  height: 100%;
+}
+
+body { padding-top: 4rem }
+
+.header {
+  height: 3.5rem;
+  margin-top: -4rem;
+  background-color: #ffffff;
+}
+
+/* BASE */
+body { font-size: 16px; }
+h1 { font-size: 1.5rem; font-family: 'Roboto Slab'; font-weight: 400 }
+h2 { font-size: 1.5rem; font-family: 'Open Sans'; font-weight: 400 }
+h3 { font-size: 1rem; font-family: 'Open Sans'; font-weight: 400; color: #999999 }
+label { font-size: 1rem; font-family: 'Open Sans'; font-weight: 400; line-height: 2rem }
+
+/* HELPERS */
+.spaceBetween { justify-content: space-between }
+.inlineFlex { display: inline-flex }
+.flex { display: flex }
+.vcenter { display: flex; align-items: center }
+.hcenter { display: flex; justify-content: center }
+.fixed-top { position: fixed }
+.fullwidth { width: 100% }
+.shadow { box-shadow: 0px 0.5rem 1rem -0.5rem rgba(0, 0, 0, 0.3) }
+.column { display: flex; flex-direction: column }
+
+.mt0-5 { margin-top: 0.5rem }
+.mt1 { margin-top: 1rem }
+.mt2 { margin-top: 2rem }
+
+.mb1 { margin-bottom: 1rem }
+.mb2 { margin-bottom: 2rem }
+
+.mr0-5 { margin-right: 0.5rem }
+.mr1-25 { margin-right: 1.25rem }
+.mr1-5 { margin-right: 1.5rem }
+.mr2 { margin-right: 2rem }
+.mr2-5 { margin-right: 2.5rem }
+.mr3 { margin-right: 3rem }
+.mr3-25 { margin-right: 3.25rem }
+.mr3-5 { margin-right: 3.5rem }
+.mr3-75 { margin-right: 3.75rem }
+.mr6 { margin-right: 6rem }
+
+.ml1 { margin-left: 1rem }
+.ml2 { margin-left: 2rem }
+.ml3 { margin-left: 3rem }
+.ml4 { margin-left: 4rem }
+
+.h2 { height: 2rem }
+.h8 { height: 8rem }
+.h9 { height: 9rem }
+.h14 { height: 14rem }
+.h28 { height: 28rem }
+.h29 { height: 29rem }
+.h30 { height: 30rem }
+
+.w1 { width: 1rem }
+.w2-5 { width: 2.5rem }
+.w3-5 { width: 3.5rem }
+.w5 { width: 5rem }
+.w6 { width: 6rem }
+.w7 { width: 7rem }
+.w8 { width: 8rem }
+.w8-5 { width: 8.5rem }
+.w9 { width: 9rem }
+.w13 { width: 13rem }
+.w18 { width: 18rem }
+.w19 { width: 19rem }
+.w22 { width: 22rem }
+.w23 { width: 23rem }
+.w24 { width: 24rem }
+.w33-5 { width: 33.5rem }
+.w35-5 { width: 35.5rem }
+.w37 { width: 37rem }
+
+.fr { float: right; }
+
+.hidden { display: none }
+
+.bc1 { background-color: #336699; color: #ffffff }
+
+.cb { color: #000000 }
+.c1 { color: #336699 }
+
+.f0 { font-family: 'Roboto Slab' }
+
+.f1 { font-family: 'Open Sans' }
+
+.fs0 { font-size: 1.5rem }
+
+.b { font-weight: 700 }
+
+.card {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+}
+
+.input {
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  background-color: white;
+  border-color: #dbdbdb;
+  box-shadow: 0 1px 2px rgba(10, 10, 10, 0.1) inset;
+  font-family: 'Open Sans';
+  font-size: 1rem;
+  height: 2rem;
+}
+
+.input[type=text],
+.input[type=url],
+.input[type=tel],
+.input[type=number],
+.input[type=color],
+.input[type=email] {
+  color: #000000;
+}
+
+.input::placeholder {
+  line-height: 1.5rem;
+  color: #999999;
+}
+
+input[type=submit] {
+  border: 0;
+  border-radius: 4px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-color: #dbdbdb;
+  font-family: 'Open Sans';
+  font-size: 1rem;
+  height: 2rem;
+}
+
+input[type=submit]:hover { cursor: pointer; }
+
+.invisibleInput {
+  border: 0;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  background-color: white;
+  border-color: #dbdbdb;
+  font-family: 'Open Sans';
+  font-size: 1rem;
+  height: 2rem;
+}
+
+.invisibleInput[type=text],
+.ininvisibleInputput[type=url],
+.invisibleInput[type=tel],
+.invisibleInput[type=number],
+.invisibleInput[type=color],
+.invisibleInput[type=email] {
+  color: #000000;
+}
+
+.invisibleInput::placeholder {
+  line-height: 1.5rem;
+  color: #999999;
+}
+
+.horizontalDivider {
+  display: block;
+  border-top: 0.1rem solid #dbdbdb;
+  height: .1rem;
+  text-align: center;
+}
+
+.horizontalDivider[data-content]::after {
+  background: white;
+  color: #b5b5b5;
+  content: attr(data-content);
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: .5rem .8rem;
+  transform: translateY(-1.1rem);
+}

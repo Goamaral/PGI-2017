@@ -18,7 +18,14 @@ var UserSchema = new Schema({
     required: true,
     trim: true
   },
-  year: Number,
+  rank: {
+    type: String,
+    required: true
+  },
+  year: {
+    type: Number,
+    require: true
+  },
   email: {
     type: String,
     required: true,
