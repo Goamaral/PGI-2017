@@ -15,32 +15,55 @@ body
     img(src='/images/logo.png', width='154rem')
     
     .w5
-      a.mr2.f1 Logout
+      a.mr2.f1(href='/logout') Logout
     
-  .fullwidth.hcenter
-    .card.shadow.mt0-5.w37.h30
+  form.fullwidth.hcenter(action='/saveProfile', method='POST')
+    input(type='hidden', name='_csrf', value='#{csrf}')
+    
+    .card.shadow.mt0-5.w37
       .mt2.flex.spaceBetween
         h2.cb.ml4 Perfil
         input.mr2.w8-5.bc1.fr(value='Guardar', type='submit')
         
       .mt2.inlineFlex
-        img(src='/images/user.png').ml2.mr2.w8.h8
+        img(src='/images/user.png').ml2.mr2.w8.h8.mt2
         .column
-          input.w23.input(placeholder='Artur Filipe Machado', type='text' name='name', required='true')
-          input.w23.input(placeholder='exemplo_email@uteach.com', type='email' name='email', required='true')
-          input.w23.input(placeholder='9826301549', type='tel' name='phone', required='true')
-          input.w23.input(placeholder='Engenharia Informatica', type='text' name='course', required='true')
+          input.w23.input(placeholder='Artur Filipe Machado', type='text' name='name', value='#{user.name}')
+          input.w23.input(placeholder='exemplo_email@uteach.com', type='email' name='email', value='#{user.email}')
+          input.w23.input(placeholder='9826301549', type='tel' name='phone', value='#{user.phone}')
+          input.w23.input(placeholder='Engenharia Informatica', type='text' name='course', value='#{user.course}')
           .inlineFlex
-            input.w18.input(placeholder='Mestrado', type='text' name='rank', required='true')
-            input.w5.input(placeholder='2', type='number' name='year', required='true', min='0')
-          input.w23.input(placeholder='************************', type='Password' name='password', required='true')
+            input.w18.input(placeholder='Mestrado', type='text' name='rank', value='#{user.rank}')
+            input.w5.input(placeholder='2', type='number' name='year', min='0', value='#{user.year}')
+          input.w23.input(placeholder='************************', type='Password' name='password')
       
       .horizontalDivider.mt2.mr2.ml2(data-content="Area de Tutor")
       
-      .hcenter.mt2
-          h2.cb Queres te tornar um tutor?
-          
-      .hcenter.mt1
-        .column  
-          input.w13.bc1.fr(value='Tornar-me tutor', type='submit')
+      if isStudent
+        .hcenter.mt2
+            h2.cb Queres te tornar um tutor?
+            
+        .hcenter.mt1.mb2
+          .column
+            a.fr.cw(href='/becomeTutor')
+              .button.w13.bc1 Tornar-me tutor
       
+      else
+        .inlineFlex.spaceBetween.mr2.ml2.w33
+          h2.cb.mt1-5 Que topicos queres ensinar?
+          h3.c1.mt2 Pontuacao: 3.5 / 5
+          
+        .mt1.mr2.ml2
+          label 1.
+          input.input.w15.ml1(placeholder='Topico (Ex: Programacao)')
+          input.input.w15.ml1(placeholder='Area (Ex: Robotica)')
+        
+        .mt1.mr2.ml2
+          label 2.
+          input.input.w15.ml1(placeholder='Topico (Ex: Programacao)')
+          input.input.w15.ml1(placeholder='Area (Ex: Robotica)')
+        
+        .mt1.mr2.ml2.mb2
+          label 3.
+          input.input.w15.ml1(placeholder='Topico (Ex: Programacao)')
+          input.input.w15.ml1(placeholder='Area (Ex: Robotica)')

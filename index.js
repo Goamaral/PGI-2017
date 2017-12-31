@@ -23,11 +23,11 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 // middleware
 // dynamic routing
 app.use(enrouten({}));
-// session
+// Session
 app.use(session({
   secret: 'uteach',
   resave: true,
-  saveUninitialized: false
+  saveUninitialized: false,
 }));
 // Release the Kraken
 app.use(kraken({

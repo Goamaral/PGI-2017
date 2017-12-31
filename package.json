@@ -10,7 +10,6 @@
         "all": "npm run build && npm run test"
     },
     "dependencies": {
-        "axios": "^0.17.1",
         "babel-eslint": "^8.0.3",
         "construx": "^1.0.0",
         "construx-copier": "^1.0.0",
@@ -26,6 +25,7 @@
         "js-sha256": "^0.8.0",
         "kraken-js": "^2.0.0",
         "mongoose": "^4.13.7",
+        "nodemon": "^1.14.6",
         "npx": "^9.7.1"
     },
     "devDependencies": {
