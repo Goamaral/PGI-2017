@@ -102,10 +102,15 @@ module.exports = (router) => {
       });
 
       if(route == 'tutors-list-ajax') {
+        let suggestion = req.body.suggestion.toLowerCase();
+
         res.locals.tutorsInfo = res.locals.tutorsInfo.filter((tutorInfo) => {
           let result = true;
-          for (let letter of req.body.suggestion) {
-            result = result && (tutorInfo.topicName.includes(letter) || tutorInfo.fieldName.includes(letter));
+          let topicName = tutorInfo.topicName.toLowerCase();
+          let fieldName = tutorInfo.fieldName.toLowerCase();
+
+          for (let letter of suggestion) {
+            result = result && (topicName.includes(letter) || fieldName.includes(letter));
           }
 
           return result;
@@ -115,6 +120,25 @@ module.exports = (router) => {
       res.render(route);
     }
   }
+
+  router.get('/tutorProfile', auth, async (req, res) => {
+    let userID = req.query.userID;
+
+    let user = await User.findById(userID);
+    res.locals.user = user;
+
+    let tutor = await Tutor.findById(user.tutorID);
+    res.locals.tutor = tutor;
+
+    res.locals.topics = [];
+
+    for (let topicID of tutor.topicIDs) {
+      let topic = await Topic.findById(topicID);
+      res.locals.topics.push(topic);
+    }
+
+    res.render('tutorProfile');
+  });
 
   router.get('/profile', auth, async (req, res) => {
     let user = await User.findById(req.session.userID);

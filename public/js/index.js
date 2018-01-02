@@ -50,3 +50,9 @@ function ajax(method, url, params) {
     };
   });
 }
+
+function seeTutorProfile(card) {
+  let userID = card.attributes['user-id'].value;
+
+  location.href = '/tutorProfile?userID=' + userID;
+}

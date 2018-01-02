@@ -25,7 +25,7 @@ body
   .fullwidth.hcenter
     tutors_list.column
       - for (let tutorInfo of tutorsInfo)
-        .card.shadow.mt1.w37.h9.inlineFlex.vcenter(user-id='#{tutorInfo.userID}')
+        .card.shadow.mt1.w37.h9.inlineFlex.vcenter(user-id='#{tutorInfo.userID}', onclick='seeTutorProfile(this)')
           img(src='/images/user.png').ml2.mr2.w6
           .column
             h2= tutorInfo.name

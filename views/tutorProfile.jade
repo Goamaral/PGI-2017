@@ -1,0 +1,61 @@
+doctype html
+head
+  title Uteach
+  link(rel='stylesheet', href='/css/reset.css')
+  link(rel='stylesheet', href='/css/core.css')
+  link(rel='stylesheet', h/css/tref='https://fonts.googleapis.com/css?family=Roboto+Slab:400')
+  link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans:400')
+  script(defer='true', src='https://use.fontawesome.com/releases/v5.0.2/js/all.js')
+  meta(name="viewport", content="width=device-width, initial-scale=1")
+body
+  .header.fixed-top.fullwidth.vcenter.shadow.spaceBetween
+    .w5
+      a.ml2.f1(href='tutors-list') Tutores
+      
+    img(src='/images/logo.png', width='154rem')
+    
+    .w5
+      a.mr2.f1(href='/logout') Logout
+    
+  form.fullwidth.hcenter(action='/saveProfile', method='POST')
+    input(type='hidden', name='_csrf', value='#{csrf}')
+    
+    .card.shadow.mt0-5.w37
+      .mt2.inlineFlex
+        img(src='/images/user.png').ml2.mr2.w8.h8.mt2
+        .inlineFlex
+          .column.mr2
+            h3.mb0-5 Nome
+            h3.mb0-5 Email
+            h3.mb0-5 Telemovel
+            h3.mb0-5 Curso
+            h3.mb0-5 Grau
+            h3 Ano
+
+          .column
+            p.mb0-5= user.name
+            p.mb0-5= user.email
+            p.mb0-5= user.phone
+            p.mb0-5= user.course
+            p.mb0-5= user.rank
+            p.mb0-5= user.year
+          
+      .inlineFlex.spaceBetween.mr2.ml2.w33.mb2
+        .column
+          h2.cb.mt1-5 Topicos e Areas?
+          .mt1.inlineFlex
+            h3.mr1 1.
+            p= topics[0].name + ' em ' + topics[0].field
+          
+          .mt1.inlineFlex
+            h3.mr1 2.
+            p= topics[1].name + ' em ' + topics[1].field
+        
+          .mt1.inlineFlex
+            h3.mr1 3.
+            p= topics[2].name + ' em ' + topics[2].field
+
+        
+        .column
+          h3.c1.mt2 Pontuacao: #{tutor.rating} / 5
+            
