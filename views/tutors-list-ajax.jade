@@ -1,0 +1,8 @@
+- for (let tutorInfo of tutorsInfo)
+  .card.shadow.mt1.w37.h9.inlineFlex.vcenter(user-id='#{tutorInfo.userID}')
+    img(src='/images/user.png').ml2.mr2.w6
+    .column
+      h2= tutorInfo.name
+      h3= tutorInfo.topicName
+      h3= tutorInfo.fieldName
+      h3.c1= 'Pontuacao: ' + tutorInfo.rating + ' / 5'

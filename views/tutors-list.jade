@@ -20,46 +20,17 @@ body
   .fullwidth.hcenter
     .card.shadow.mt0-5.w37.h2.vcenter
       i.fas.fa-search.ml1
-      input.invisibleInput.w33-5(placeholder='Insere as palavras chave do que procuras. Ex: web design', type='text')
+      input.invisibleInput.w33-5(placeholder='Insere as palavras chave do que procuras. Ex: web design', type='text', oninput='updateTutorsList(this)', csrf='#{csrf}')
   
   .fullwidth.hcenter
-    .column
-      .card.shadow.mt1.w37.h9.inlineFlex.vcenter
-        img(src='/images/user.png').ml2.mr2.w6
-        .column
-          h2 Artur Filipe Machado
-          h3 Programacao
-          h3 Robotica
-          h3.c1 Pontuacao: 3.5 / 5
-          
-      .card.shadow.mt1.w37.h9.inlineFlex.vcenter
-        img(src='/images/user.png').ml2.mr2.w6
-        .column
-          h2 Artur Filipe Machado
-          h3 Programacao
-          h3 Robotica
-          h3.c1 Pontuacao: 3.5 / 5
-          
-      .card.shadow.mt1.w37.h9.inlineFlex.vcenter
-        img(src='/images/user.png').ml2.mr2.w6
-        .column
-          h2 Artur Filipe Machado
-          h3 Programacao
-          h3 Robotica
-          h3.c1 Pontuacao: 3.5 / 5
-          
-      .card.shadow.mt1.w37.h9.inlineFlex.vcenter
-        img(src='/images/user.png').ml2.mr2.w6
-        .column
-          h2 Artur Filipe Machado
-          h3 Programacao
-          h3 Robotica
-          h3.c1 Pontuacao: 3.5 / 5 
-      
-      .card.shadow.mt1.w37.h9.inlineFlex.vcenter
-        img(src='/images/user.png').ml2.mr2.w6
-        .column
-          h2 Artur Filipe Machado
-          h3 Programacao
-          h3 Robotica
-          h3.c1 Pontuacao: 3.5 / 5 
+    tutors_list.column
+      - for (let tutorInfo of tutorsInfo)
+        .card.shadow.mt1.w37.h9.inlineFlex.vcenter(user-id='#{tutorInfo.userID}')
+          img(src='/images/user.png').ml2.mr2.w6
+          .column
+            h2= tutorInfo.name
+            h3= tutorInfo.topicName
+            h3= tutorInfo.fieldName
+            h3.c1= 'Pontuacao: ' + tutorInfo.rating + ' / 5'
+  
+  script(src='/js/index.js')

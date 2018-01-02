@@ -4,10 +4,13 @@ var mongoose = require('mongoose');
 var { Schema } = mongoose;
 
 var TopicSchema = new Schema({
-  name: String,
+  name: {
+    type: String,
+    default: ''
+  },
   field: {
-    type: Schema.Types.ObjectId,
-    ref: 'Field'
+    type: String,
+    default: ''
   }
 });
 

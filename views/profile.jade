@@ -51,19 +51,19 @@ body
       else
         .inlineFlex.spaceBetween.mr2.ml2.w33
           h2.cb.mt1-5 Que topicos queres ensinar?
-          h3.c1.mt2 Pontuacao: 3.5 / 5
+          h3.c1.mt2 Pontuacao: #{tutor.rating} / 5
           
         .mt1.mr2.ml2
           label 1.
-          input.input.w15.ml1(placeholder='Topico (Ex: Programacao)')
-          input.input.w15.ml1(placeholder='Area (Ex: Robotica)')
+          input.input.w15.ml1(placeholder='Topico (Ex: Programacao)', value='#{topics[0].name}', name='topic0')
+          input.input.w15.ml1(placeholder='Area (Ex: Robotica)', value='#{topics[0].field}', name='field0')
         
         .mt1.mr2.ml2
           label 2.
-          input.input.w15.ml1(placeholder='Topico (Ex: Programacao)')
-          input.input.w15.ml1(placeholder='Area (Ex: Robotica)')
+          input.input.w15.ml1(placeholder='Topico (Ex: Programacao)', value='#{topics[1].name}', name='topic1')
+          input.input.w15.ml1(placeholder='Area (Ex: Robotica)', value='#{topics[1].field}', name='field1')
         
         .mt1.mr2.ml2.mb2
           label 3.
-          input.input.w15.ml1(placeholder='Topico (Ex: Programacao)')
-          input.input.w15.ml1(placeholder='Area (Ex: Robotica)')
+          input.input.w15.ml1(placeholder='Topico (Ex: Programacao)', value='#{topics[2].name}', name='topic2')
+          input.input.w15.ml1(placeholder='Area (Ex: Robotica)', value='#{topics[2].field}', name='field2')

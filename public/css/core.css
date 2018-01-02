@@ -194,9 +194,10 @@ input[type=submit]:hover, .button:hover { cursor: pointer; }
 .horizontalDivider[data-content]::after {
   background: white;
   color: #b5b5b5;
+  font-family: 'Open Sans';
   content: attr(data-content);
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   padding: .5rem .8rem;
   transform: translateY(-1.1rem);
 }

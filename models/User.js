@@ -36,7 +36,7 @@ var UserSchema = new Schema({
     type: String,
     required: true
   },
-  tutor: {
+  tutorID: {
     type: Schema.Types.ObjectId,
     ref: 'Tutor',
     required: false
