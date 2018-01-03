@@ -7,6 +7,13 @@ head
   link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans:400')
   script(defer='true', src='https://use.fontawesome.com/releases/v5.0.2/js/all.js')
   meta(name="viewport", content="width=device-width, initial-scale=1")
+  script(async='true', src="https://www.googletagmanager.com/gtag/js?id=UA-111880667-1")
+  script.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111880667-1');
+
 body
   .header.fixed-top.fullwidth.vcenter.shadow.spaceBetween
     .w5
