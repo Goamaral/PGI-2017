@@ -4,6 +4,7 @@ const path = require('path');
 const enrouten = require('express-enrouten');
 const mongoose = require('mongoose');
 const session = require('express-session');
+require('dotenv').config();
 const mongoUrl = 'mongodb://' + process.env.db_username + ':' + process.env.db_password + '@ds141766.mlab.com:41766/uteach';
 //const mongoUrl = 'mongodb://localhost/uteach';
 
