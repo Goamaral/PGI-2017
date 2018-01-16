@@ -26,6 +26,8 @@ p { font-size: 1rem; font-family: 'Open Sans'; font-weight: 400 }
 .inlineFlex { display: inline-flex }
 .flex { display: flex }
 .flex1 { flex: 1 }
+.alignSelfFlexEnd { align-self: flex-end }
+.alignSelfCenter { align-self: center }
 .vcenter { display: flex; align-items: center }
 .hcenter { display: flex; justify-content: center }
 .fixed-top { position: fixed }

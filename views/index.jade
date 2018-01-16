@@ -32,21 +32,24 @@ body
           #buttonLogin.shadow.hcenter(onclick='loginMenu()')
             h1 Login
 
-      form(action='/login', method='POST').card.shadow.mt1.w37.h18
-        div.hcenter
-          img(src='/images/logo.png', width='154rem')
-          h2.mt1-25.mr1-5 Uma nova maneira de aprender
-        div
+      form(action='/login', method='POST').card.shadow.mt1.w37.column
+        .row.hcenter
+          img.alignSelfCenter(src='/images/logo.png', width='154rem')
+          h2.c1.mt1-5.mr1-25 Uma nova maneira de aprender
+
+        .row.hcenter
           input(type='hidden', name='_csrf', value='#{csrf}')
-          .mt1.hcenter
+          .mt1
             label.mr3-5 Email
             input.w19.input(placeholder='exemplo_email@uteach.com', type='email' name='email', required='true')
 
-          .mt2.hcenter
+        .row.hcenter
+          .mt2
             label.mr1-5 Password
             input.w19.input(placeholder='************************', type='Password' name='password', required='true')
 
-          input.mt2.bc1.w7.fr.mr6(value='Login', type='submit')
+        .column
+          input.mt2.mb2.bc1.w7.mr6.alignSelfFlexEnd(value='Login', type='submit')
 
       form.card.shadow.mt1.w37.h30.pt2.hidden(action='/register', method='POST')
         input(type='hidden', name='_csrf', value='#{csrf}')
