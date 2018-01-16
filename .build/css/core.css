@@ -25,16 +25,21 @@ p { font-size: 1rem; font-family: 'Open Sans'; font-weight: 400 }
 .spaceAround { justify-content: space-around }
 .inlineFlex { display: inline-flex }
 .flex { display: flex }
+.flex1 { flex: 1 }
 .vcenter { display: flex; align-items: center }
 .hcenter { display: flex; justify-content: center }
 .fixed-top { position: fixed }
 .fullwidth { width: 100% }
+.fullheight { height: 100% }
 .shadow { box-shadow: 0px 0.5rem 1rem -0.5rem rgba(0, 0, 0, 0.3) }
 .column { display: flex; flex-direction: column }
+.row { display: flex; flex-direction: row }
 
 .mt0-5 { margin-top: 0.5rem }
 .mt1 { margin-top: 1rem }
+.mt1-25 { margin-top: 1.25rem }
 .mt1-5 { margin-top: 1.5rem }
+.mt1-75 { margin-top: 1.75rem }
 .mt2 { margin-top: 2rem }
 .mt2-5 { margin-top: 2.5rem }
 .mt3 { margin-top: 3rem }
@@ -53,6 +58,7 @@ p { font-size: 1rem; font-family: 'Open Sans'; font-weight: 400 }
 .mr3-25 { margin-right: 3.25rem }
 .mr3-5 { margin-right: 3.5rem }
 .mr3-75 { margin-right: 3.75rem }
+.mr4 { margin-right: 4rem }
 .mr6 { margin-right: 6rem }
 
 .ml1 { margin-left: 1rem }
@@ -60,10 +66,13 @@ p { font-size: 1rem; font-family: 'Open Sans'; font-weight: 400 }
 .ml3 { margin-left: 3rem }
 .ml4 { margin-left: 4rem }
 
+.pt2 { padding-top: 2rem }
+
 .h2 { height: 2rem }
 .h8 { height: 8rem }
 .h9 { height: 9rem }
 .h14 { height: 14rem }
+.h19 { height: 19rem }
 .h28 { height: 28rem }
 .h29 { height: 29rem }
 .h30 { height: 30rem }
@@ -99,6 +108,7 @@ p { font-size: 1rem; font-family: 'Open Sans'; font-weight: 400 }
 
 .hidden { display: none }
 
+.bc0 { background-color: #ffffff; color: #000000 }
 .bc1 { background-color: #336699; color: #ffffff }
 
 .cb { color: #000000 }
