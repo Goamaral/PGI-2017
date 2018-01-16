@@ -32,51 +32,50 @@ body
           #buttonLogin.shadow.hcenter(onclick='loginMenu()')
             h1 Login
 
-      .fullwidth
-        form.card.shadow.mt1.w37.h19
-          div.hcenter
-            img(src='/images/logo.png', width='154rem')
-            h2.mt1-25.mr1-5 Uma nova maneira de aprender
-          form(action='/login', method='POST')
-            input(type='hidden', name='_csrf', value='#{csrf}')
-            .mt2.hcenter
-              label.mr3-5 Email
-              input.w19.input(placeholder='exemplo_email@uteach.com', type='email' name='email', required='true')
-
-            .mt2.hcenter
-              label.mr1-5 Password
-              input.w19.input(placeholder='************************', type='Password' name='password', required='true')
-
-            input.mt2.bc1.w7.fr.mr6(value='Login', type='submit')
-
-        form.card.shadow.mt1.w37.h30.pt2.hidden(action='/register', method='POST')
+      form(action='/login', method='POST').card.shadow.mt1.w37.h18
+        div.hcenter
+          img(src='/images/logo.png', width='154rem')
+          h2.mt1-25.mr1-5 Uma nova maneira de aprender
+        div
           input(type='hidden', name='_csrf', value='#{csrf}')
-          .hcenter
-            label.mr3-25 Nome
-            input.w19.input(placeholder='Artur Filipe Machado', type='text' name='name', required='true')
-
-          .mt2.hcenter
+          .mt1.hcenter
             label.mr3-5 Email
             input.w19.input(placeholder='exemplo_email@uteach.com', type='email' name='email', required='true')
-
-          .mt2.hcenter
-            label.mr1-25 Telemovel
-            input.w19.input(placeholder='9826301549', type='tel' name='phone', required='true')
-
-          .mt2.hcenter
-            label.mr3-25 Curso
-            input.w19.input(placeholder='Engenharia Informatica', type='text' name='course', required='true')
-
-          .mt2.hcenter
-            label.mr3-75 Grau
-            input.w9.mr2.input(placeholder='Mestrado', type='text' name='rank', required='true')
-            label.mr2-5 Ano
-            input.w3-5.input(placeholder='2', type='number' name='year', required='true', min='0')
 
           .mt2.hcenter
             label.mr1-5 Password
             input.w19.input(placeholder='************************', type='Password' name='password', required='true')
 
-          input.mt2.mr6.bc1.w7.fr(value='Registar', type='submit')
+          input.mt2.bc1.w7.fr.mr6(value='Login', type='submit')
+
+      form.card.shadow.mt1.w37.h30.pt2.hidden(action='/register', method='POST')
+        input(type='hidden', name='_csrf', value='#{csrf}')
+        .hcenter
+          label.mr3-25 Nome
+          input.w19.input(placeholder='Artur Filipe Machado', type='text' name='name', required='true')
+
+        .mt2.hcenter
+          label.mr3-5 Email
+          input.w19.input(placeholder='exemplo_email@uteach.com', type='email' name='email', required='true')
+
+        .mt2.hcenter
+          label.mr1-25 Telemovel
+          input.w19.input(placeholder='9826301549', type='tel' name='phone', required='true')
+
+        .mt2.hcenter
+          label.mr3-25 Curso
+          input.w19.input(placeholder='Engenharia Informatica', type='text' name='course', required='true')
+
+        .mt2.hcenter
+          label.mr3-75 Grau
+          input.w9.mr2.input(placeholder='Mestrado', type='text' name='rank', required='true')
+          label.mr2-5 Ano
+          input.w3-5.input(placeholder='2', type='number' name='year', required='true', min='0')
+
+        .mt2.hcenter
+          label.mr1-5 Password
+          input.w19.input(placeholder='************************', type='Password' name='password', required='true')
+
+        input.mt2.mr6.bc1.w7.fr(value='Registar', type='submit')
 
   script(src='/js/index.js')
