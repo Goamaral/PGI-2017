@@ -4,11 +4,16 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
+  devtool: 'inline-source-map',
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({ title: 'Uteach' })
   ],
-  output: { filename: 'bundle.js', path: path.resolve(__dirname, 'dist') },
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
+  },
   module: {
     rules: [
       { test: /\.css$/, use: ['style-loader', 'css-loader'] },

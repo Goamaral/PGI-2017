@@ -5,6 +5,7 @@ const session = require('express-session');
 const sslRedirect = require('heroku-ssl-redirect');
 const http = require('http');
 const app = require('express')();
+const webpackDevMiddleware = require('webpack-dev-middleware');
 
 // Load config
 require('dotenv').config();
@@ -37,6 +38,12 @@ app.use(session({
   secret: 'uteach',
   resave: true,
   saveUninitialized: false,
+}));
+// Webpack
+const webpackConfig = require('./webpack.config.js');
+const compiler = require('webpack')(webpackConfig);
+app.use(webpackDevMiddleware(compiler, {
+  publicPath: webpackConfig.output.publicPath
 }));
 
 app.on('start', function () {
