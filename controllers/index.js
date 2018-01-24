@@ -1,10 +1,13 @@
-'use strict';
-
 const sha256 = require('js-sha256').sha256;
 const User = require('../models/User');
 const Tutor = require('../models/Tutor');
 const Topic = require('../models/Topic');
 const mongoose = require('mongoose');
+const pathModule = require('path');
+
+const path = file => {
+  return pathModule.join(pathModule.resolve(__dirname, 'dist') + file)
+}
 
 const auth = (req, res, next) => {
   if (req.session && req.session.userID) {
@@ -17,7 +20,7 @@ const auth = (req, res, next) => {
 module.exports = (router) => {
   router.get('/', (req, res) => {
     res.locals.csrf = req.csrfToken();
-    res.render('index');
+    res.sendFile(path('index'))
   });
 
   router.post('/login', async (req, res) => {
