@@ -4,9 +4,10 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const sslRedirect = require('heroku-ssl-redirect');
 const http = require('http');
+const app = require('express')();
+
+// Load config
 require('dotenv').config();
-const mongoUrl = 'mongodb://' + process.env.db_username + ':' + process.env.db_password + '@ds141766.mlab.com:41766/uteach';
-const app = module.exports = require('express')();
 
 // Start server
 const server = http.createServer(app);
@@ -20,6 +21,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 // database
+const mongoUrl = 'mongodb://' + process.env.db_username + ':' + process.env.db_password + '@ds141766.mlab.com:41766/uteach';
 mongoose.connect(mongoUrl, { useMongoClient: true });
 mongoose.Promise = global.Promise;
 const db = mongoose.connection;
