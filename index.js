@@ -1,15 +1,19 @@
-const express = require('express');
-const kraken = require('kraken-js');
 const path = require('path');
 const enrouten = require('express-enrouten');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const sslRedirect = require('heroku-ssl-redirect');
+const http = require('http');
 require('dotenv').config();
 const mongoUrl = 'mongodb://' + process.env.db_username + ':' + process.env.db_password + '@ds141766.mlab.com:41766/uteach';
-//const mongoUrl = 'mongodb://localhost/uteach';
+const app = module.exports = require('express')();
 
-const app = module.exports = express();
+// Start server
+const server = http.createServer(app);
+server.listen(process.env.PORT || 8080);
+server.on('listening', function () {
+  console.log('Server listening on http://localhost:%d', this.address().port);
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,20 +36,9 @@ app.use(session({
   resave: true,
   saveUninitialized: false,
 }));
-// Release the Kraken
-app.use(kraken({
-  onconfig: function (config, next) {
-    /*
-     * Add any additional config setup or overrides here. `config` is an initialized
-     * `confit` (https://github.com/krakenjs/confit/) configuration object.
-     */
-    next(null, config);
-  }
-}));
 
 app.on('start', function () {
   console.log('Application ready to serve requests.');
-  console.log('Environment: %s', app.kraken.get('env:env'));
 });
 
 process.on('exit', function() {
