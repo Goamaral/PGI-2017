@@ -40,7 +40,15 @@ app.use(session({
   saveUninitialized: false,
 }));
 // Webpack
-const webpackConfig = require('./webpack.config.js');
+switch (process.env.NODE_ENV) {
+  case 'production':
+    const webpackConfigFile = './webpack.prod.js';
+    break;
+  case 'development':
+    const webpackConfigFile = './webpack.dev.js';
+    break;
+}
+const webpackConfig = require(webpackConfigFile);
 const compiler = require('webpack')(webpackConfig);
 app.use(webpackDevMiddleware(compiler, {
   publicPath: webpackConfig.output.publicPath

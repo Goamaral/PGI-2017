@@ -5,11 +5,9 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
-  devtool: 'inline-source-map',
   plugins: [
     new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({ title: 'Uteach' ,
-    new UglifyJSPlugin()
+    new HtmlWebpackPlugin({ title: 'Uteach' }),
   ],
   output: {
     filename: 'bundle.js',
