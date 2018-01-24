@@ -1,13 +1,15 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
   devtool: 'inline-source-map',
   plugins: [
     new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({ title: 'Uteach' })
+    new HtmlWebpackPlugin({ title: 'Uteach' ,
+    new UglifyJSPlugin()
   ],
   output: {
     filename: 'bundle.js',
